@@ -1,0 +1,11 @@
+mixin menu_item(text, link, is_dropdown)
+    li.menu__item(class=is_dropdown?'menu__item-dropdown':'')
+        a(href=link) #{text}
+
+mixin menu_social_item(icon, alt, link, is_footer)
+    li(class=is_footer?'footer__social-menu__item':'menu__item')
+        a(href=link)
+            if is_footer
+                img(src="../img/footer/" + icon alt=alt)
+            else
+                img(src="../img/header/" + icon alt=alt)

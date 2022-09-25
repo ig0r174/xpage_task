@@ -1,0 +1,29 @@
+mixin path_item(link, text)
+    li.page__path-item
+        a(href=link) #{text}
+
+mixin article(is_single, title, description, image, date, ...categories)
+    a.page__news-article(class=is_single?'page__news-article-single':'', href="/article.html")
+        div.page__news-article__image
+            img(src="../img/news/articles/" + image alt=title)
+        div.page__news-article__data
+            div.page__news-article__categories
+                each category in categories
+                    div.page__news-article__category=category
+            div.page__news-article__date #{date}
+        div.page__news-article__title #{title}
+
+        if( is_single && description )
+            div.page__news-article__description #{description}
+
+        div.page__news-article__arrow
+            img(src="../img/news/news_arrow.svg" alt=title)
+
+mixin article_tag(text)
+    li.page__article__footer__data-tags__item
+        a(href="#") #{text}
+
+mixin article_share(icon, alt, link)
+    li.page__article__footer__data-share__item
+        a(href=link)
+            img(src="../img/news/" + icon alt=alt)

@@ -1,0 +1,28 @@
+$mediaWidthLarge: 1315px;
+$mediaWidthTablet: 992px;
+$mediaWidthPhone: 800px;
+$mediaWidthPhoneSmall: 600px;
+
+@mixin media-phone-sm {
+  @media (max-width: $mediaWidthPhoneSmall) {
+    @content;
+  }
+}
+
+@mixin media-phone {
+  @media (max-width: $mediaWidthPhone) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media (max-width: $mediaWidthTablet) {
+    @content;
+  }
+}
+
+@mixin media-large {
+  @media (max-width: $mediaWidthLarge) {
+    @content;
+  }
+}

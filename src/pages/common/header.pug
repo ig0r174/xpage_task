@@ -1,0 +1,27 @@
+div.container
+    header.header
+        div.header__top
+            div.header__top-left
+                button(type="button").header__top-left-menu.header__toggle
+                button(type="button").button.button__primary.header__top-left-button Предложить новость
+            div.header__top-right
+                a(href="tel:+73513651711").header__top-right-phone 8 (3513) 65-17-11
+                a(href="#").header__top-right-search
+                    img(src="../img/header/header_search.svg" alt="Поиск").header__top-right-search-img
+        div.header__bottom
+            button(type="button").header__bottom-hide.header__toggle
+            ul.header__bottom-menu.menu
+                +menu_item("Новости", "#")
+                +menu_item("Телепроекты", "#")
+                +menu_item("Реклама", "#")
+                +menu_item("Онлайн", "#", true)
+                +menu_item("Программа передач", "#")
+                +menu_item("Ещё", "#", true)
+            div.header__bottom-social
+                div.header__bottom-social-title Подписывайтесь на нас:
+                ul.header__bottom-social-menu.menu
+                    +menu_social_item('header_youtube.svg', 'Youtube', 'https://youtube.com')
+                    +menu_social_item('header_facebook.svg', 'Facebook', 'https://facebook.com')
+                    +menu_social_item('header_vk.svg', 'Вконтакте', 'https://vk.com')
+                    +menu_social_item('header_ok.svg', 'Одноклассники', 'https://ok.ru')
+                    +menu_social_item('header_instagram.svg', 'Instagram', 'https://instagram.com')

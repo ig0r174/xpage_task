@@ -1,0 +1,54 @@
+extends common/layout
+include mixins/news
+
+block content
+    div.container
+        div.page__top
+            h1.page__title Все новости
+            ul.page__path
+                +path_item("#", "Главная")
+                +path_item("/news.html", "Новости")
+
+        div.page__filters
+            div.page__select.page__select-date
+                input(type="text")
+
+            div.page__select
+                select(placeholder="Выбрать рубрику")
+                    option(disabled) Медицина
+                    option Общество
+                    option Коммуналка
+                    option Политика
+                    option Спорт
+                    option Вектор развития
+                    option Медицина
+                    option Общество
+                    option Коммуналка
+                    option Политика
+                    option Спорт
+                    option Вектор развития
+
+        div.page__news
+            +article(false, 'Благодаря поддержке предпринимателей. Златоустовские поликлиники оснастили холодильными установками для хранения вакцины', false, 'article_1.jpg', '02/02/2021', 'Медицина', 'Общество')
+            +article(false, 'Госпитальная база закрыта, учреждение вернётся в «доковидный» режим после дезинфекции.  Роддом Златоуста вновь откроет свои двери 8 февраля', false, 'article_2.jpg', '29/01/2021', 'Медицина')
+            +article(false, 'Осторожно, сосульки! Оттепель на этой неделе привела к тому, что на крышах многих домов образовались опасные ледяные наросты', false, 'article_3.jpg', '29/01/2021', 'Коммуналка')
+            +article(false, 'В четыре раза меньше вопросов, чем обычно. В Златоусте прошло первое в 2021-м году Собрание депутатов', false, 'article_4.jpg', '29/01/2021', 'Политика')
+            +article(false, 'В Златоусте сотрудники теротдела проверят магазин, из которого выбрасывали строительный мусор', false, 'article_5.jpg', '29/01/2021', 'Коммуналка')
+            +article(false, 'ДЧ: Первое Собрание депутатов 2021 года: планируется работа на весь год', false, 'article_6.jpg', '29/01/2021', 'Общество')
+            +article(true, 'Госпитальная база закрыта, учреждение вернётся в «доковидный» режим после дезинфекции.  Роддом Златоуста вновь откроет свои двери 8 февраля', 'Ещё одна главная новость дня — с 8 февраля златоустовский роддом возвращается к привычному формату работы. Госпитальную базу для лечения больных коронавирусной инфекцией переводят...', 'article_2.jpg', '29/01/2021', 'Медицина')
+
+        div.pagination
+            div.pagination__back.pagination__back-disabled
+            ul.pagination__list
+                li.pagination__item.pagination__item-active
+                    a(href="#") 1
+                li.pagination__item
+                    a(href="#") 2
+                li.pagination__item
+                    a(href="#") 3
+                li.pagination__item
+                    a(href="#") 4
+                li.pagination__item.pagination__item-last
+                    a(href="#") 123
+            a(href="#")
+                div.pagination__next.pagination__next

@@ -1,0 +1,143 @@
+@import "reset";
+@import "vars";
+@import "../mixins/media";
+
+body {
+  font-family: $main-font;
+  background: $background;
+  color: $main-text-color;
+
+  @include media-phone {
+    &.scroll__hide {
+      overflow: hidden;
+    }
+  }
+}
+
+.container {
+  max-width: 1504px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  @media (max-width: 1534px) {
+    max-width: calc(100% - 30px);
+  }
+}
+
+.page {
+  margin-top: 55px;
+
+  @include media-large {
+    margin-top: 42px;
+  }
+
+  @include media-tablet {
+    margin-top: 28px;
+  }
+
+  @include media-phone-sm {
+    margin-top: 16px;
+  }
+
+  .page__title {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 125%;
+    color: $main-text-color;
+    margin-bottom: 5px;
+
+    @include media-large {
+      font-size: 58px;
+    }
+
+    @include media-tablet {
+      font-size: 46px;
+    }
+
+    @include media-phone-sm {
+      font-size: 32px;
+      margin-bottom: 0;
+    }
+  }
+
+  .page__path {
+    display: flex;
+
+    .page__path-item {
+
+      a {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 135%;
+        color: $path-color;
+        text-decoration: none;
+        position: relative;
+
+        @include media-phone-sm {
+          font-size: 14px;
+        }
+      }
+
+      &:not(:last-child) {
+        a {
+          position: relative;
+
+          &:after {
+            content: "/";
+            margin: 0 3px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .page__filters {
+    margin-top: 56px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media-large {
+      justify-content: space-between;
+      margin-top: 48px;
+    }
+
+    @include media-tablet {
+      margin-top: 24px;
+    }
+
+    .page__select {
+      width: calc(100% / 3 - 33px);
+      flex: 0 0 calc(100% / 3 - 33px);
+
+      @include media-large {
+        width: calc(50% - 30px);
+        flex: 0 0 calc(50%  - 30px);
+      }
+
+      @include media-tablet {
+        width: calc(50% - 15px);
+        flex: 0 0 calc(50%  - 15px);
+      }
+
+      @include media-phone-sm {
+        width: 100%;
+        flex: 0 0 100%;
+      }
+
+      &:not(:last-child) {
+        margin-right: 50px;
+
+        @include media-tablet {
+          margin-right: 30px;
+        }
+
+        @include media-phone-sm {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

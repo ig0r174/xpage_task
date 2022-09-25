@@ -1,0 +1,97 @@
+@import "vars";
+@import "../mixins/media";
+
+.datepicker-dropdown .datepicker-picker {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 22px 20px 20px;
+  border: 2px solid $grey;
+}
+
+.datepicker-dropdown.datepicker-orient-top {
+  padding-bottom: 10px;
+}
+
+.datepicker-dropdown.datepicker-orient-bottom {
+  padding-top: 10px;
+}
+
+.datepicker-input.in-edit:active, .datepicker-input.in-edit:focus {
+  box-shadow: none;
+  border-radius: 0;
+  border-color: $grey;
+  outline: none;
+}
+
+.datepicker-main {
+  padding: 0;
+}
+
+.datepicker-view .days-of-week {
+  gap: 16px;
+  padding: 4px 8px;
+  border-bottom: 2px solid $grey;
+  margin-bottom: 8px;
+}
+
+.datepicker-grid {
+  width: auto;
+  font-size: 12px;
+  line-height: 16px;
+  color: $grey;
+
+  &.prev {
+    color: $grey-secondary;
+  }
+}
+
+.datepicker-header .datepicker-controls .button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: $grey;
+}
+
+.datepicker-view .dow {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.datepicker-cell {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  &:not(.disabled):not(.selected):hover {
+    background-color: transparent;
+    &:before {
+      background-color: $grey-secondary;
+      opacity: .1;
+    }
+  }
+
+  &.focused:not(.selected),
+  &.selected,
+  &.selected:hover {
+    background-color: transparent;
+    position: relative;
+    color: $grey;
+    font-weight: inherit;
+
+    &:before {
+      background: transparent;
+      border: 1px solid $grey;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+extends common/layout
+include mixins/news
+
+block content
+    div.container
+        div.page__top
+            h3.page__title.page__title-article Госпитальная база закрыта, учреждение вернётся в «доковидный» режим после дезинфекции. &nbsp;Роддом Златоуста вновь откроет свои двери 8 февраля
+            ul.page__path
+                +path_item("#", "Главная")
+                +path_item("/news.html", "Новости")
+                +path_item("#", "Медицина")
+            div.page__article__data
+                div.page__article__categories
+                    div.page__article__category Медицина
+                div.page__article__date 29/01/2021
+        div.page__article__body
+            em Ещё одна главная новость дня — с 8 февраля златоустовский роддом возвращается к привычному формату работы. Госпитальную базу для лечения больных коронавирусной инфекцией переводят в профильный режим. Приказ Министерство здравоохранения Челябинской области выпустило 27 января.
+            p Напомним, перепрофилировать родильный дом решили в связи с ежедневным большим приростом златоустовцев, заболевших ковид-19.  За это время лечение на госпитальной базе прошли свыше 1000 пациентов.
+            br
+            img(src="../img/news/articles/article_video.jpg" data-video)
+            br
+            blockquote
+                h5 Александр Дорофеев
+                span главный врач родильного дома г. Златоуста:
+                p «На сегодняшний день в МПЦ находятся 46 больных. Большая часть из них будет переведена на базу квартала Медик и меньшая часть – на базу долечивания, в район метзавода. В воскресенье к нам приезжает дезостанция для обработки всех помещений. С 1 по 7 число проводится заключительная дезинфекция всего родильного дома. С 8 числа мы начинаем принимать беременных и рожениц нашего города и горнозаводской зоны».
+            br
+            hr
+            br
+            p Подготовка к возвращению профильной деятельности больниц проводится тщательным образом. Это полная дезинфекция помещений, забор ряда лабораторных анализов. И только после разрешения всех инстанций медицинское учреждение поступает к работе. Златоуст — не единственный город, где в связи со стабилизацией обстановки с коронавирусной инфекцией медицинские объекты возвращаются к плановому приёму пациентов. Решение по сокращению коечных мест для больных ковидом принимается оперативным штабом по борьбе с коронавирусной инфекцией при Правительстве Челябинской области. Оставшиеся ковид-базы перейдут в прежний режим работы при условии улучшения ситуации.
+        div.page__article__footer
+            div.page__article__footer__data.page__article__footer__data-author
+                div.page__article__footer__data-title Автор материала
+                div.page__article__footer__data-info Иван Анатольев
+            div.page__article__footer__data.page__article__footer__data-tags
+                div.page__article__footer__data-title Теги
+                ul.page__article__footer__data-tags__list
+                    +article_tag("Роддом")
+                     +article_tag("Вакцинация")
+                    +article_tag("Коронавирус")
+            div.page__article__footer__data.page__article__footer__data-share
+                div.page__article__footer__data-title Поделиться
+                ul.page__article__footer__data-share__list
+                    +article_share('news_youtube.svg', 'Youtube', 'https://youtube.com')
+                    +article_share('news_facebook.svg', 'Facebook', 'https://facebook.com')
+                    +article_share('news_vk.svg', 'Вконтакте', 'https://vk.com')
+                    +article_share('news_ok.svg', 'Одноклассники', 'https://ok.ru')
+                    +article_share('news_instagram.svg', 'Instagram', 'https://instagram.com')
+    div.page__article__comments
+        div.container
+            h1.page__article__comments__title Оставьте свой комментарий
+            form.page__article__comments__form
+                div.page__article__comments__form-row
+                    input(type="text" placeholder="Имя").page__article__comments__form-input
+                    input(type="text" placeholder="E-mail").page__article__comments__form-input
+                    label.page__article__comments__form-file
+                        input(type="file")
+                        | Прикрепить фото
+                div.page__article__comments__form-row
+                    input(type="text" placeholder="Комментарий").page__article__comments__form-input
+                    button(type="submit").button.button__secondary Отправить
+
+
+
